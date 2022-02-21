@@ -1,0 +1,54 @@
+body {
+    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #000;
+    color: white;
+}
+select {
+    background-color: #000;
+    color: white;
+    text-align: center;
+}
+.sunday {
+    background-color: #ff8686;
+}
+.national {
+    background-color: #acfff1;
+}
+.comm {
+    background-color: #ffbf48;
+}
+.local {
+    background-color: #cd97ff;
+}
+#today {
+    background-color: #97ff97;
+}
+.nextMonth {
+    background-color: #FFF;
+    color: gray;
+}
+
+.legend p {
+    width: fit-content
+}
+
+#submit {
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+}
+
+#submit:hover {
+    color: #97ff97;
+    border: 2px solid white;
+}
