@@ -9,6 +9,11 @@
 
 include "arrays.php";
 
+session_start();
+if (!isset($_SESSION['tareas'])) {
+    $_SESSION['tareas'] = array();
+}
+
 $monthSelected = date('m');
 $yearSelected = date('Y');
 
@@ -43,6 +48,7 @@ $today = date('d');
     <link rel="stylesheet" href="calendario.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -82,7 +88,7 @@ $today = date('d');
                         $day++;
                     }
                     if (isHoliday($day, $monthSelected, $holidays)) {
-                        echo(" class=\"" . typeOfHoliday($day, $monthSelected, $holidays) . "\"");
+                        echo (" class=\"" . typeOfHoliday($day, $monthSelected, $holidays) . "\"");
                     }
                     if ($day == $today && $monthSelected == date('m')) {
                         echo " id=\"today\"";
@@ -96,7 +102,7 @@ $today = date('d');
                     } elseif ($i == 0 && $j < $firstDayPosition) {
                         echo "></td>";
                     } else {
-                        echo ">$day</td>";
+                        echo "><a href=\"tarea.php?id=$day\">$day </a></td>";
                         $day++;
                     }
                 }
